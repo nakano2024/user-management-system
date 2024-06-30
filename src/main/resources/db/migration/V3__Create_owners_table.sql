@@ -1,7 +1,8 @@
-CREATE TABLE authentication_types (
+CREATE TABLE owners (
     id BIGSERIAL PRIMARY KEY,
     unique_id VARCHAR(256) NOT NULL UNIQUE,
-    type VARCHAR(64) NOT NULL UNIQUE,
+    is_deleted BOOLEAN NOT NULL DEFAULT false,
+    authencication_type_unique_id VARCHAR(256) NOT NULL,
     created_at TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP
 );

@@ -1,0 +1,11 @@
+CREATE TABLE internal_principals (
+    id BIGSERIAL PRIMARY KEY,
+    unique_id VARCHAR(256) NOT NULL UNIQUE,
+    is_deleted BOOLEAN NOT NULL DEFAULT false,
+    owner_unique_id VARCHAR(256) NOT NULL UNIQUE,
+    name VARCHAR(64) NOT NULL,
+    email VARCHAR(256) NOT NULL,
+    password VARCHAR(256) NOT NULL,
+    created_at TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP,
+    update_at TIMESTAMPRZ DEFAULT CURRENT_TIMESTAMP
+);
